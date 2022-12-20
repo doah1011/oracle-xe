@@ -1,26 +1,26 @@
 /*
-¼±ÅÃÀ» »ç¿ëÇÏ¿© Çà Á¦ÇÑ
-    WHERE ÀıÀ» »ç¿ëÇÏ¿© ¹İÈ¯µÇ´Â ÇàÀ» Á¦ÇÑ
+ì„ íƒì„ ì‚¬ìš©í•˜ì—¬ í–‰ ì œí•œ
+    WHERE ì ˆì„ ì‚¬ìš©í•˜ì—¬ ë°˜í™˜ë˜ëŠ” í–‰ì„ ì œí•œ
 
 WHERE
-    Á¶°ÇÀ» ÃæÁ·ÇÏ´Â ÇàÀ¸·Î query¸¦ Á¦ÇÑ
+    ì¡°ê±´ì„ ì¶©ì¡±í•˜ëŠ” í–‰ìœ¼ë¡œ queryë¥¼ ì œí•œ
     
-    ¼¼ °¡Áö ¿ä¼Ò
-    - ¿­ ÀÌ¸§
-    - ºñ±³ Á¶°Ç
-    - ¿­ ÀÌ¸§, »ó¼ö ¶Ç´Â °ª ¸®½ºÆ®
+    ì„¸ ê°€ì§€ ìš”ì†Œ
+    - ì—´ ì´ë¦„
+    - ë¹„êµ ì¡°ê±´
+    - ì—´ ì´ë¦„, ìƒìˆ˜ ë˜ëŠ” ê°’ ë¦¬ìŠ¤íŠ¸
 */
 
---WHERE Àı »ç¿ë
+--WHERE ì ˆ ì‚¬ìš©
 SELECT employee_id, last_name, job_id, department_id
 FROM employees
 WHERE department_id = 90;
 
 /*
-¹®ÀÚ¿­ ¹× ³¯Â¥
-    ¹®ÀÚ¿­ ¹× ³¯Â¥ °ªÀº ÀÛÀº µû¿ÈÇ¥·Î ¹­À½
-    ¹®ÀÚ °ªÀº ´ë¼Ò¹®ÀÚ¸¦ ±¸ºĞÇÏ°í ³¯Â¥ °ªÀº Çü½ÄÀ» ±¸ºĞ
-    ±âº» ³¯Â¥ Ç¥½Ã Çü½ÄÀº DD-MON-YY
+ë¬¸ìì—´ ë° ë‚ ì§œ
+    ë¬¸ìì—´ ë° ë‚ ì§œ ê°’ì€ ì‘ì€ ë”°ì˜´í‘œë¡œ ë¬¶ìŒ
+    ë¬¸ì ê°’ì€ ëŒ€ì†Œë¬¸ìë¥¼ êµ¬ë¶„í•˜ê³  ë‚ ì§œ ê°’ì€ í˜•ì‹ì„ êµ¬ë¶„
+    ê¸°ë³¸ ë‚ ì§œ í‘œì‹œ í˜•ì‹ì€ DD-MON-YY
 */
 
 SELECT last_name, job_id, department_id
@@ -32,64 +32,64 @@ FROM employees
 WHERE hire_date = '03/06/17';
 
 /*
-ºñ±³ ¿¬»êÀÚ
-    Æ¯Á¤ Ç¥Çö½ÄÀ» ´Ù¸¥°ªÀÌ³ª Ç¥Çö½Ä°ú ºñ±³ÇÏ´Â Á¶°Ç¿¡¼­ »ç¿ë
-    = °°À½
-    > º¸´Ù Å­
-    >= º¸´Ù Å©°Å³ª °°À½
-    < º¸´Ù ÀÛÀ½
-    <= º¸´Ù ÀÛ°Å³ª °°À½
-    <> °°Áö ¾ÊÀ½
-    BETWEEN ... AND ... µÎ °ª »çÀÌ(°æ°è°ª Æ÷ÇÔ)
-    IN(set)             °ª ¸®½ºÆ® Áß ÀÏÄ¡ÇÏ´Â °ª °Ë»ö
-    LIKE                ÀÏÄ¡ÇÏ´Â ¹®ÀÚ ÆĞÅÏ °Ë»ö
-    IS NULL             NULL °ªÀÎÁö ¿©ºÎ
+ë¹„êµ ì—°ì‚°ì
+    íŠ¹ì • í‘œí˜„ì‹ì„ ë‹¤ë¥¸ê°’ì´ë‚˜ í‘œí˜„ì‹ê³¼ ë¹„êµí•˜ëŠ” ì¡°ê±´ì—ì„œ ì‚¬ìš©
+    = ê°™ìŒ
+    > ë³´ë‹¤ í¼
+    >= ë³´ë‹¤ í¬ê±°ë‚˜ ê°™ìŒ
+    < ë³´ë‹¤ ì‘ìŒ
+    <= ë³´ë‹¤ ì‘ê±°ë‚˜ ê°™ìŒ
+    <> ê°™ì§€ ì•ŠìŒ
+    BETWEEN ... AND ... ë‘ ê°’ ì‚¬ì´(ê²½ê³„ê°’ í¬í•¨)
+    IN(set)             ê°’ ë¦¬ìŠ¤íŠ¸ ì¤‘ ì¼ì¹˜í•˜ëŠ” ê°’ ê²€ìƒ‰
+    LIKE                ì¼ì¹˜í•˜ëŠ” ë¬¸ì íŒ¨í„´ ê²€ìƒ‰
+    IS NULL             NULL ê°’ì¸ì§€ ì—¬ë¶€
 */    
 
---ºñ±³ ¿¬»êÀÚ »ç¿ë
+--ë¹„êµ ì—°ì‚°ì ì‚¬ìš©
 SELECT last_name, salary
 FROM employees
 WHERE salary <= 3000;
 
---BETWEEN ¿¬»êÀÚ¸¦ »ç¿ëÇÏ´Â ¹üÀ§ Á¶°Ç
+--BETWEEN ì—°ì‚°ìë¥¼ ì‚¬ìš©í•˜ëŠ” ë²”ìœ„ ì¡°ê±´
 SELECT last_name, salary
 FROM employees
 WHERE salary BETWEEN 2500 AND 3500;
 
---IN ¿¬»êÀÚ¸¦ »ç¿ëÇÏ´Â ¸â¹öÁ¶°Ç (¿©·¯ Á¶°Ç Ãß°¡ °¡´É)
+--IN ì—°ì‚°ìë¥¼ ì‚¬ìš©í•˜ëŠ” ë©¤ë²„ì¡°ê±´ (ì—¬ëŸ¬ ì¡°ê±´ ì¶”ê°€ ê°€ëŠ¥)
 SELECT employee_id, last_name, salary, manager_id
 FROM employees
 WHERE manager_id IN (100, 101, 201);
 
 /*
-LIKE ¿¬»êÀÚ¸¦ »ç¿ëÇÏ¿© ÆĞÅÏ ÀÏÄ¡
-    LIKE ¿¬»êÀÚ¸¦ »ç¿ëÇÏ¿© À¯È¿ÇÑ °Ë»ö ¹®ÀÚ¿­ °ªÀÇ ´ëÃ¼ ¹®ÀÚ °Ë»öÀ» ¼öÇà
-    °Ë»öÁ¶°Ç¿¡´Â ¸®ÅÍ·² ¹®ÀÚ³ª ¼ıÀÚ°¡ Æ÷ÇÔµÉ ¼ö ÀÖÀ½
-        - %´Â 0°³ ÀÌ»óÀÇ ¹®ÀÚ¸¦ ³ªÅ¸³¿
-        - _´Â ÇÑ ¹®ÀÚ¸¦ ³ªÅ¸³¿
+LIKE ì—°ì‚°ìë¥¼ ì‚¬ìš©í•˜ì—¬ íŒ¨í„´ ì¼ì¹˜
+    LIKE ì—°ì‚°ìë¥¼ ì‚¬ìš©í•˜ì—¬ ìœ íš¨í•œ ê²€ìƒ‰ ë¬¸ìì—´ ê°’ì˜ ëŒ€ì²´ ë¬¸ì ê²€ìƒ‰ì„ ìˆ˜í–‰
+    ê²€ìƒ‰ì¡°ê±´ì—ëŠ” ë¦¬í„°ëŸ´ ë¬¸ìë‚˜ ìˆ«ìê°€ í¬í•¨ë  ìˆ˜ ìˆìŒ
+        - %ëŠ” 0ê°œ ì´ìƒì˜ ë¬¸ìë¥¼ ë‚˜íƒ€ëƒ„
+        - _ëŠ” í•œ ë¬¸ìë¥¼ ë‚˜íƒ€ëƒ„
 */
 
 SELECT first_name
 FROM employees
 WHERE first_name LIKE '%a%';
--- S% = S·Î ½ÃÀÛÇÏ´Â ¹®ÀÚ¿­ ÀüºÎ Ç¥½Ã
---%a% = ÀÌ¸§¿¡ a°¡ µé¾î°¡´Â ¹®ÀÚ¿­ ÀüºÎ Ç¥½Ã
+-- S% = Së¡œ ì‹œì‘í•˜ëŠ” ë¬¸ìì—´ ì „ë¶€ í‘œì‹œ
+--%a% = ì´ë¦„ì— aê°€ ë“¤ì–´ê°€ëŠ” ë¬¸ìì—´ ì „ë¶€ í‘œì‹œ
 
---´ëÃ¼ ¹®ÀÚ °áÇÕ
+--ëŒ€ì²´ ë¬¸ì ê²°í•©
 SELECT last_name
 FROM employees
 WHERE last_name LIKE '_o%';
---_o% µÎ ¹ø Â° ¹®ÀÚ°¡ o
+--_o% ë‘ ë²ˆ ì§¸ ë¬¸ìê°€ o
 
--- ESCAPE ½Äº°ÀÚ \ SA_
+-- ESCAPE ì‹ë³„ì \ SA_ Oracleì€ ì§€ì • ê°€ëŠ¥í•˜ì§€ë§Œ ì›¬ë§Œí•´ì„œ / ì‚¬ìš©
 
 SELECT employee_id, last_name, job_id
 FROM employees
 WHERE job_id LIKE '%SA\_%' ESCAPE '\';
 
 /*
-NULL Á¶°Ç »ç¿ë
-    IS NULL ¿¬»êÀÚ·Î nullÀ» Å×½ºÆ®ÇÕ´Ï´Ù
+NULL ì¡°ê±´ ì‚¬ìš©
+    IS NULL ì—°ì‚°ìë¡œ nullì„ í…ŒìŠ¤íŠ¸í•©ë‹ˆë‹¤
 */
 
 SELECT last_name, manager_id
@@ -97,56 +97,56 @@ FROM employees
 WHERE manager_id IS NULL;
 
 /*
-³í¸® ¿¬»êÀÚ¸¦ »ç¿ëÇÏ¿© Á¶°ÇÁ¤ÀÇ 
-    AND: ±¸¼º ¿ä¼Ò Á¶°ÇÀÌ ¸ğµÎ ÂüÀÎ °æ¿ì TRUE ¹İÈ¯
-    OR: ±¸¼º ¿ä¼Ò Á¶°Ç Áß ÇÏ³ª°¡ ÂüÀÎ °æ¿ì TRUE ¹İÈ¯
-    NOT: Á¶°ÇÀÌ °ÅÁşÀÎ °æ¿ì TRUE ¹İÈ¯
+ë…¼ë¦¬ ì—°ì‚°ìë¥¼ ì‚¬ìš©í•˜ì—¬ ì¡°ê±´ì •ì˜ 
+    AND: êµ¬ì„± ìš”ì†Œ ì¡°ê±´ì´ ëª¨ë‘ ì°¸ì¸ ê²½ìš° TRUE ë°˜í™˜
+    OR: êµ¬ì„± ìš”ì†Œ ì¡°ê±´ ì¤‘ í•˜ë‚˜ê°€ ì°¸ì¸ ê²½ìš° TRUE ë°˜í™˜
+    NOT: ì¡°ê±´ì´ ê±°ì§“ì¸ ê²½ìš° TRUE ë°˜í™˜
 */
---AND ¿¬»êÀÚ »ç¿ë
+--AND ì—°ì‚°ì ì‚¬ìš©
 SELECT employee_id, last_name, job_id, salary
 FROM employees
 WHERE salary >= 10000
 AND job_id LIKE '%MAN%';
 
---OR ¿¬»êÀÚ »ç¿ë
+--OR ì—°ì‚°ì ì‚¬ìš©
 SELECT employee_id, last_name, job_id, salary
 FROM employees
 WHERE salary >= 10000
 OR job_id LIKE '%MAN%';
 
---NOT ¿¬»êÀÚ »ç¿ë
+--NOT ì—°ì‚°ì ì‚¬ìš©
 SELECT last_name, job_id
 FROM employees
 WHERE job_id NOT IN ('IT PROG', 'ST_CLERK', 'SA_REP');
 
 /* 
-ORDER BY Àı
-    ORDER BY ÀıÀ» »ç¿ëÇÏ¿© °Ë»öµÈ ÇàÀ» Á¤·Ä
-    -ASC: ¿À¸§Â÷¼ø, ±âº»°ª
-    -DESC: ³»¸²Â÷¼ø
-    SELECT¹®ÀÇ ¸Ç ¸¶Áö¸·¿¡ ¹èÄ¡
+ORDER BY ì ˆ
+    ORDER BY ì ˆì„ ì‚¬ìš©í•˜ì—¬ ê²€ìƒ‰ëœ í–‰ì„ ì •ë ¬
+    -ASC: ì˜¤ë¦„ì°¨ìˆœ, ê¸°ë³¸ê°’
+    -DESC: ë‚´ë¦¼ì°¨ìˆœ
+    SELECTë¬¸ì˜ ë§¨ ë§ˆì§€ë§‰ì— ë°°ì¹˜
 */
 SELECT last_name, job_id, department_id, hire_date
 FROM employees
 ORDER BY hire_date;
 
---³»¸²Â÷¼ø Á¤·Ä
+--ë‚´ë¦¼ì°¨ìˆœ ì •ë ¬
 SELECT last_name, job_id, department_id, hire_date
 FROM employees
 ORDER BY hire_date DESC;
 
--- ¿­ alias¸¦ ±âÁØÀ¸·Î Á¤·Ä
+-- ì—´ aliasë¥¼ ê¸°ì¤€ìœ¼ë¡œ ì •ë ¬
 SELECT employee_id, last_name, salary*12 annsal
 FROM employees
 ORDER BY annsal;
 
---¿­ ¼ıÀÚ À§Ä¡¸¦ »ç¿ëÇÏ¿© Á¤·Ä
+--ì—´ ìˆ«ì ìœ„ì¹˜ë¥¼ ì‚¬ìš©í•˜ì—¬ ì •ë ¬
 SELECT last_name, job_id, department_id, hire_date
 FROM employees
 ORDER BY 1;
--- 1Àº last nameÀ¸·Î Á¤·Ä, 2´Â job_id·Î Á¤·Ä ...
+-- 1ì€ last nameìœ¼ë¡œ ì •ë ¬, 2ëŠ” job_idë¡œ ì •ë ¬ ...
 
---¿©·¯ ¿­À» ±âÁØÀ¸·Î Á¤·Ä
+--ì—¬ëŸ¬ ì—´ì„ ê¸°ì¤€ìœ¼ë¡œ ì •ë ¬
 SELECT last_name, job_id, department_id, salary
 FROM employees
 ORDER BY department_id, salary DESC;
