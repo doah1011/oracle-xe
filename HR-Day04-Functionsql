@@ -43,6 +43,7 @@ SELECT 'Hello'||'World' FROM dual;
 --SUBSTR() - 지정된 길이의 문자열을 추출
 --substring, 프로그램마다 0과1의 기준이 다르니 실행 시켜보고 참고하기
 SELECT SUBSTR('HelloWorld', 1, 5) FROM dual;
+SELECT SUBSTR('Doah',0,2) FROM dual;
 
 --LENGTH() - 문자열 길이를 숫자 값으로 표시함
 SELECT LENGTH('HelloWorld') FROM dual;
@@ -52,6 +53,7 @@ SELECT INSTR('HelloWorld', 'W') FROM dual;
 
 --LPAD() 길이가 n이 되도록 왼쪽부터 문자식으로 채운 표현식을 반환
 SELECT LPAD('salary', 10, '*') FROM dual;
+SELECT LPAD('employee', 6, '-') FROM dual;
 
 --RPAD() 길이가 n이 되도록 오른쪽부터 문자식으로 채운 표현식을 반환
 SELECT RPAD('salary', 10, '*') FROM dual;
@@ -59,7 +61,7 @@ SELECT RPAD('salary', 10, '*') FROM dual;
 --REPLACE() - 문자열 치환
 SELECT REPLACE('Jack and JUE', 'J', 'BL') FROM dual;
 
---TRIM() - 문자열에서 서냉 문자나 후행 문자를 자름
+--TRIM() - 문자열에서 선행 문자나 후행 문자를 자름
 SELECT TRIM('H' FROM 'HelloWorld') FROM dual;
 
 /*
@@ -177,7 +179,7 @@ NVL() 함수
 */
 
 SELECT last_name, salary, NVL(commission_pct, 0)
-    (salary*12) + (salary*12*NVL(commission_pct, 0)) AN_SAL
+    (salary*12)+(salary*12*NVL(commission_pct, 0)) AN_SAL
 FROM employees;
 
 SELECT commission_pct
@@ -232,6 +234,8 @@ SELECT last_name, job_id, salary,
                 WHEN 'SA_REP' THEN 1.20*salary
     ELSE salary END "REVISED_SALARY"
 FROM employees;
+
+
 
 
 
