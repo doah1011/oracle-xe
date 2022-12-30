@@ -1,0 +1,9 @@
+
+EXPLAIN PLAN FOR
+SELECT d.dname, e.ename
+FROM dept d, emp e
+WHERE d.deptno = e.deptno
+AND e.sal >= 3000
+ORDER BY e.ename;
+
+SELECT*FROM TABLE(DBMS_XPLAN.DISPLAY_CURSOR(NULL, NULL, 'ALLSTATS LAST'));
